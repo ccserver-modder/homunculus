@@ -1,0 +1,16 @@
+[
+{
+  "modid": "homumod",
+  "name": "Homunculus Mod",
+  "description": "description.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["QuartzMiner", ""],
+  "credits": "credits",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
