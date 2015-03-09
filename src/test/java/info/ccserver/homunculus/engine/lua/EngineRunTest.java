@@ -11,7 +11,7 @@ public class EngineRunTest {
 	@Test
 	public void create() throws ScriptException {
 		IEngine luaEngine = new LuaEngine();
-		String script = "coroutine.wrap(function() " + "\n"
+		String script = "return coroutine.wrap(function() " + "\n"
 				+ "coroutine.yield(\"string\")" + "\n" + "end)()";
 		Assert.assertNotNull(luaEngine);
 		Object ret = luaEngine.eval(script);
