@@ -19,4 +19,14 @@ public class EngineRunTest {
 		Assert.assertEquals("string", ret);
 
 	}
+
+	@Test
+	public void cannotAccessOS() throws ScriptException {
+		IEngine luaEngine = new LuaEngine();
+
+		String script = "return os";
+		Object ret = luaEngine.eval(script);
+		System.out.println(ret);
+		Assert.assertNull(ret);
+	}
 }
