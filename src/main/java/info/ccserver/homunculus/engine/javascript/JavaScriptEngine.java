@@ -14,17 +14,10 @@ public class JavaScriptEngine implements IEngine {
 		// TODO 自動生成されたコンストラクター・スタブ
 		engine = new ScriptEngineManager().getEngineByName("JavaScript");
 		String engineName = engine.getFactory().getEngineName();
-		switch (engineName) {
-		case "Oracle Nashorn":
+		if (engineName.equals("Oracle Nashorn")) {
 			engine.eval("load('nashorn:mozilla_compat.js');");
 			System.out.println("mozilla_compat loaded.");
-			break;
-
-		default:
-			break;
 		}
-		System.out.println();
-		// System.out.println("engine = " + engine);
 	}
 
 	@Override
