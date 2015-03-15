@@ -1,4 +1,4 @@
-package info.ccserver.homunculus.entity;
+package info.ccserver.homunculus.common.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

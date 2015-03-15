@@ -1,7 +1,7 @@
 package info.ccserver.homunculus;
 
-import info.ccserver.homunculus.entity.EntityHomunculus;
-import info.ccserver.homunculus.entity.RenderHomunculus;
+import info.ccserver.homunculus.common.entity.EntityHomunculus;
+import info.ccserver.homunculus.common.entity.RenderHomunculus;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
