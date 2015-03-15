@@ -1,6 +1,7 @@
 package info.ccserver.homunculus.engine.javascript;
 
-import info.ccserver.homunculus.engine.IEngine;
+import info.ccserver.homunculus.core.engine.IEngine;
+import info.ccserver.homunculus.core.engine.javascript.JavaScriptEngine;
 
 import javax.script.ScriptException;
 
