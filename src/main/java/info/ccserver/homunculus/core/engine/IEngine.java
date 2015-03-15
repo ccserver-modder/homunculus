@@ -1,4 +1,4 @@
-package info.ccserver.homunculus.engine;
+package info.ccserver.homunculus.core.engine;
 
 public interface IEngine {
 

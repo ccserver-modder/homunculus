@@ -1,6 +1,6 @@
-package info.ccserver.homunculus.engine.javascript;
+package info.ccserver.homunculus.core.engine.javascript;
 
-import info.ccserver.homunculus.engine.IEngine;
+import info.ccserver.homunculus.core.engine.IEngine;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

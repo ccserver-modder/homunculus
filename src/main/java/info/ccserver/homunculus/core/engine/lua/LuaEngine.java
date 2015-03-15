@@ -1,6 +1,6 @@
-package info.ccserver.homunculus.engine.lua;
+package info.ccserver.homunculus.core.engine.lua;
 
-import info.ccserver.homunculus.engine.IEngine;
+import info.ccserver.homunculus.core.engine.IEngine;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
