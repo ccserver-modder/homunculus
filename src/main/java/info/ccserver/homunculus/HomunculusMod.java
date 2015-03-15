@@ -26,11 +26,13 @@ public class HomunculusMod {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
+		HomunculusData.registerPre();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		HomunculusData.register();
+
 		int trackingRange = 250;
 		int updateFrequency = 1;
 		boolean sendsVelocityUpdates = false;
