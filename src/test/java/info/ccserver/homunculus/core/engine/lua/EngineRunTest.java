@@ -1,7 +1,6 @@
-package info.ccserver.homunculus.engine.lua;
+package info.ccserver.homunculus.core.engine.lua;
 
 import info.ccserver.homunculus.core.engine.IEngine;
-import info.ccserver.homunculus.core.engine.lua.LuaEngine;
 
 import javax.script.ScriptException;
 
