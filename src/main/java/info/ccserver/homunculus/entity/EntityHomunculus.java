@@ -1,6 +1,7 @@
 package info.ccserver.homunculus.entity;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
@@ -29,4 +30,10 @@ public class EntityHomunculus extends Entity {
 
 	}
 
+	@Override
+	public boolean interactFirst(EntityPlayer playerIn) {
+		// TODO 自動生成されたメソッド・スタブ
+
+		return false;
+	}
 }

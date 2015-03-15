@@ -28,4 +28,17 @@ public class RenderHomunculus extends Render {
 		return null;
 	}
 
+	@Override
+	public void doRender(Entity entity, double x, double y, double z,
+			float p_76986_8_, float partialTicks) {
+		this.doRender((EntityHomunculus) entity, x, y, z, p_76986_8_,
+				partialTicks);
+	}
+
+	public void doRender(EntityHomunculus entity, double x, double y, double z,
+			float p_76986_8_, float partialTicks) {
+		// TODO たぶんここに色々書く
+
+		super.doRender(entity, x, y, z, p_76986_8_, partialTicks);
+	}
 }
