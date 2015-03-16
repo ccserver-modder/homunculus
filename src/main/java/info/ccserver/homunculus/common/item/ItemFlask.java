@@ -7,5 +7,6 @@ public class ItemFlask extends Item {
 	public ItemFlask(String unlocalizedName, CreativeTabs tab) {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setCreativeTab(tab);
+		this.setMaxStackSize(1);
 	}
 }

@@ -6,7 +6,9 @@ import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -22,9 +24,18 @@ public class HomunculusData {
 	public static void registerPre() {
 		tab = new TabHomunculus();
 
+		/* アイテム登録 */
 		itemFlask = new ItemFlask(nameFlask, tab);
 		GameRegistry.registerItem(itemFlask, nameFlask);
 		
+		/* レシピ登録 */
+		GameRegistry.addShapelessRecipe(new ItemStack(itemFlask, 1),
+				new ItemStack(Items.egg,1),
+				new ItemStack(Items.redstone, 1),
+				new ItemStack(Items.potionitem, 1, 0),
+				new ItemStack(Items.sugar,1)
+				);
+
 		if (FMLCommonHandler.instance().getSide() == Side.CLIENT) {
 	 
 	        	ModelBakery.addVariantName(itemFlask,
