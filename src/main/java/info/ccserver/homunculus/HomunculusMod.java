@@ -9,6 +9,8 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
@@ -23,6 +25,9 @@ public class HomunculusMod {
 
 	@Instance(MODID)
 	public static HomunculusMod instance;
+
+	public static final SimpleNetworkWrapper packetHandler = NetworkRegistry.INSTANCE
+			.newSimpleChannel(MODID);
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
