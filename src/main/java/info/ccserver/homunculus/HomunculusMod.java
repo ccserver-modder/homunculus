@@ -1,18 +1,15 @@
 package info.ccserver.homunculus;
 
-import info.ccserver.homunculus.common.entity.EntityHomunculus;
-import info.ccserver.homunculus.common.entity.RenderHomunculus;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import info.ccserver.homunculus.network.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * @author quartz
@@ -21,10 +18,12 @@ import net.minecraftforge.fml.relauncher.Side;
 @Mod(modid = HomunculusMod.MODID, version = "0.0.0", name = "Homunculus Mod")
 public class HomunculusMod {
 	public static final String MODID = "homumod";
-	public static final String ENTITY_NAME = "Homunculus";
 
 	@Instance(MODID)
 	public static HomunculusMod instance;
+
+	@SidedProxy(modId = HomunculusMod.MODID, clientSide = "info.ccserver.homunculus.network.ProxyClient", serverSide = "info.ccserver.homunculus.network.ProxyServer")
+	public static IProxy proxy;
 
 	public static final SimpleNetworkWrapper packetHandler = NetworkRegistry.INSTANCE
 			.newSimpleChannel(MODID);
@@ -37,17 +36,8 @@ public class HomunculusMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		HomunculusData.register();
-
-		int trackingRange = 250;
-		int updateFrequency = 1;
-		boolean sendsVelocityUpdates = false;
-		EntityRegistry.registerModEntity(EntityHomunculus.class,
-				HomunculusMod.ENTITY_NAME, 0, this, trackingRange,
-				updateFrequency, sendsVelocityUpdates);
-		if (event.getSide() == Side.CLIENT) {
-			RenderingRegistry.registerEntityRenderingHandler(
-					EntityHomunculus.class, new RenderHomunculus());
-		}
+		proxy.registerTileEntities();
+		proxy.registerEntities();
 	}
 
 	@EventHandler

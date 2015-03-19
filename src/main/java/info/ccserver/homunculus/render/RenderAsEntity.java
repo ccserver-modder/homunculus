@@ -1,5 +1,6 @@
-package info.ccserver.homunculus.common.entity;
+package info.ccserver.homunculus.render;
 
+import info.ccserver.homunculus.common.entity.EntityHomunculus;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -8,18 +9,16 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class RenderHomunculus extends Render {
+public class RenderAsEntity extends Render {
 
-	RenderHomunculus(RenderManager renderManager) {
+	RenderAsEntity(RenderManager renderManager) {
 		super(renderManager);
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	@SideOnly(Side.CLIENT)
-	public RenderHomunculus() {
+	public RenderAsEntity() {
 		this(Minecraft.getMinecraft().getRenderManager());
-		// this.shadowSize = 0.15F;
-		// this.shadowOpaque = 0.75F;
 	}
 
 	@Override
@@ -39,6 +38,7 @@ public class RenderHomunculus extends Render {
 			float p_76986_8_, float partialTicks) {
 		// TODO たぶんここに色々書く
 
+		entity.core().callRenderFunc(entity, x, y, z, p_76986_8_, partialTicks);
 		super.doRender(entity, x, y, z, p_76986_8_, partialTicks);
 	}
 }
