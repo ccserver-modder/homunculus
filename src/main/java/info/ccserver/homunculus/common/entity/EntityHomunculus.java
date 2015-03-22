@@ -1,19 +1,24 @@
 package info.ccserver.homunculus.common.entity;
 
+import info.ccserver.homunculus.core.HomunculusCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class EntityHomunculus extends Entity {
+public class EntityHomunculus extends Entity implements IHomunculus {
+
+	private HomunculusCore homunculusCore;
 
 	public void init(){
 		
 	};
 	
 	public EntityHomunculus(World worldIn) {
+		// TODO 自動生成されたコンストラクター・スタブ
 		super(worldIn);
-
+		// TODO コア管理
+		homunculusCore = new HomunculusCore();
 	}
 
 	@Override
@@ -39,5 +44,10 @@ public class EntityHomunculus extends Entity {
 		// TODO 自動生成されたメソッド・スタブ
 
 		return false;
+	}
+
+	@Override
+	public HomunculusCore core() {
+		return homunculusCore;
 	}
 }
