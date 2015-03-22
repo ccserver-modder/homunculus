@@ -10,6 +10,10 @@ public class EntityHomunculus extends Entity implements IHomunculus {
 
 	private HomunculusCore homunculusCore;
 
+	public void init(){
+		
+	};
+	
 	public EntityHomunculus(World worldIn) {
 		// TODO 自動生成されたコンストラクター・スタブ
 		super(worldIn);
