@@ -7,9 +7,13 @@ import net.minecraft.world.World;
 
 public class EntityHomunculus extends Entity {
 
+	public void init(){
+		
+	};
+	
 	public EntityHomunculus(World worldIn) {
 		super(worldIn);
-		// TODO 自動生成されたコンストラクター・スタブ
+
 	}
 
 	@Override

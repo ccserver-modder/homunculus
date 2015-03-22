@@ -1,20 +1,16 @@
 package info.ccserver.homunculus.common.item;
-
 import info.ccserver.homunculus.common.entity.EntityHomunculus;
-
-import org.luaj.vm2.Print;
 
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -78,10 +74,11 @@ public class ItemFlask extends Item {
                     		//底が石か鉄かガラスで塞がれている
                     		
                     		System.out.println("召喚可能と判断");
-                    		
-                    		//召喚されませんので諦めました。　召喚できる人どぞー
-                    		// EntityHomunculus theEntity = new EntityHomunculus(world);
-                    		// theEntity.setPosition(blockpos.getX(), blockpos.getY(), blockpos.getZ());
+
+                    		EntityHomunculus theEntity = new EntityHomunculus(world);
+                            theEntity.rotationYaw = (float)(((MathHelper.floor_double((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) - 1) * 90);
+                            theEntity.setPosition(blockpos.getX()+0.5F, blockpos.getY()+0.5F, blockpos.getZ()+0.5F);
+                            world.spawnEntityInWorld(theEntity);
                     		
                     		}
                     	
